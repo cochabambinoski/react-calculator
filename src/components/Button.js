@@ -11,23 +11,23 @@ class Button extends React.Component {
   }
 
   render() {
-    const { value } = this.props;
+    const { name } = this.props;
     const { classStyle } = this.props;
     return (
       <button className={classStyle} type="submit">
-        {value}
+        {name}
       </button>
     );
   }
 }
 
 Button.propTypes = {
-  value: PropTypes.string,
+  name: PropTypes.string,
   classStyle: PropTypes.string,
 };
 
 Button.defaultProps = {
-  value: '0',
+  name: '0',
   classStyle: 'button-item',
 };
 
