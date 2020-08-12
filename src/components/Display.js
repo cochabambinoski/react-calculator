@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/Display.css';
+import '../styles/Button.css';
 
-class Display extends React.Component {
+class Button extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,21 +11,29 @@ class Display extends React.Component {
   }
 
   render() {
-    const { result } = this.props;
+    const { value, color, wide } = this.props;
+    let width = '25';
+    if (wide) {
+      width = parseInt(width, 10) * 2;
+    }
     return (
-      <div className="display-container">
-        <p className="result-display">{result}</p>
-      </div>
+      <button className="button-item" style={{ backgroundColor: `${color}`, width: `${width}%` }} type="submit">
+        {value}
+      </button>
     );
   }
 }
 
-Display.propTypes = {
-  result: PropTypes.string,
+Button.propTypes = {
+  value: PropTypes.string,
+  color: PropTypes.string,
+  wide: PropTypes.bool,
 };
 
-Display.defaultProps = {
-  result: '0',
+Button.defaultProps = {
+  value: '0',
+  color: '#f5913e',
+  wide: false,
 };
 
-export default Display;
+export default Button;

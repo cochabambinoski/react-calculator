@@ -11,24 +11,29 @@ class Button extends React.Component {
   }
 
   render() {
-    const { name } = this.props;
-    const { classStyle } = this.props;
+    const { value, color, wide } = this.props;
+    let width = '25';
+    if (wide) {
+      width = parseInt(width, 10) * 2;
+    }
     return (
-      <button className={classStyle} type="submit">
-        {name}
+      <button className="button-item" style={{ backgroundColor: `${color}`, width: `${width}%` }} type="submit">
+        {value}
       </button>
     );
   }
 }
 
 Button.propTypes = {
-  name: PropTypes.string,
-  classStyle: PropTypes.string,
+  value: PropTypes.string,
+  color: PropTypes.string,
+  wide: PropTypes.bool,
 };
 
 Button.defaultProps = {
-  name: '0',
-  classStyle: 'button-item',
+  value: '0',
+  color: '#f5913e',
+  wide: false,
 };
 
 export default Button;
