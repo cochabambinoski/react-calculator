@@ -1,0 +1,20 @@
+.display-container {
+  box-sizing: border-box;
+  width: 700px;
+  height: 100px;
+  border: none;
+  border-bottom: 1px solid #d8d8d8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
+  color: white;
+  background-color: #858694;
+  font-weight: bolder;
+}
+
+.result-display {
+  margin: 0;
+  font-size: 32px;
+  padding: 3px;
+}

@@ -1,5 +1,6 @@
-# Milestone 1.
+# Milestone 3.
 > This project consist on build a React calculator.
+>
 
 
 ## Built With
