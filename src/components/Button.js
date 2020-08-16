@@ -2,33 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/Button.css';
 
-class Button extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
+const Button = ({
+  value, color, wide, clickHandler,
+}) => {
+  let width = '25';
+  if (wide) {
+    width = parseInt(width, 10) * 2;
   }
-
-  render() {
-    const { name } = this.props;
-    const { classStyle } = this.props;
-    return (
-      <button className={classStyle} type="submit">
-        {name}
-      </button>
-    );
-  }
-}
+  return (
+    <button className="button-item" onClick={() => clickHandler(value)} style={{ backgroundColor: `${color}`, width: `${width}%` }} type="submit">
+      {value}
+    </button>
+  );
+};
 
 Button.propTypes = {
-  name: PropTypes.string,
-  classStyle: PropTypes.string,
+  value: PropTypes.string,
+  color: PropTypes.string,
+  wide: PropTypes.bool,
+  clickHandler: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
-  name: '0',
-  classStyle: 'button-item',
+  value: '0',
+  color: '#f5913e',
+  wide: false,
 };
 
 export default Button;
