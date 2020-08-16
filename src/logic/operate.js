@@ -17,7 +17,7 @@ const operate = (numberOne, numberTwo, operation) => {
       break;
     case '÷':
       if (numberTwo === '0') {
-        result += 'It\'s not possible to divide by zero.';
+        result += 'Not divisible by zero';
       } else {
         result += (a.div(b)).toString();
       }
